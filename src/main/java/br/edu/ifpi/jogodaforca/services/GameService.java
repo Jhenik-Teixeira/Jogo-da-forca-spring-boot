@@ -10,8 +10,8 @@ public class GameService {
     @Autowired
     private PalavraRepository palavraRepository;
 
+    // retorna uma palavra aleatória
     public Palavra getRandomPalavra() {
         return palavraRepository.findRandomPalavra();
     }
 }
-
