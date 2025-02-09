@@ -1,15 +1,10 @@
-package br.edu.ifpi.jogoforca.repositories;
+package br.edu.ifpi.jogodaforca.repositories;
 
-import br.edu.ifpi.jogoforca.models.Palavra;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-import br.edu.ifpi.jogoforca.models.Usuario;
+import br.edu.ifpi.jogodaforca.models.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-import java.util.List;
 
 @Repository
 
