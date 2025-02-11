@@ -1,0 +1,312 @@
+:root {
+    --primary-color: #4e54c8;
+    --secondary-color: #8f94fb;
+    --accent-color: #ff6b6b;
+    --background-color: #f8f9fa;
+    --text-color: #2d3436;
+    --error-color: #ef4444;
+    --success-color: #10b981;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+.game-title {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-custom {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+}
+
+.btn-custom {
+    background: var(--accent-color);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 0.95rem;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+    background: #ff5252;
+}
+
+/* Estilos específicos do Jogo */
+.game-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.25rem !important;
+}
+
+.score-display {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 0.95rem;
+}
+
+.input-group-custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.letter-input {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 2rem !important;
+    text-align: center;
+    border: 3px solid var(--primary-color);
+    border-radius: 15px !important;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 0 auto !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.letter-input::placeholder {
+    font-size: 1rem;
+    text-transform: none;
+    font-weight: normal;
+}
+
+.letter-input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 107, 0.25);
+    outline: none;
+}
+
+.word-display {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    font-family: 'Press Start 2P', cursive;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.wrong-letters {
+    background: #fee2e2;
+    border-radius: 10px;
+    padding: 10px;
+    color: #ef4444;
+    font-size: 0.95rem;
+}
+
+.hint-box {
+    background: #e0e7ff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.attempts-left {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.forca-image {
+    max-height: 300px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+/* Estilos do Ranking */
+.ranking-table {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.ranking-table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+}
+
+.ranking-table tr:nth-child(even) {
+    background: rgba(78, 84, 200, 0.1);
+}
+
+.ranking-table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Estilos do Login */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-control-custom {
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 1rem;
+}
+
+/* Animações */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Animação de revelação da palavra */
+.palavra-revelada {
+    color: var(--error-color) !important;
+    animation: revelarPalavra 0.5s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+@keyframes revelarPalavra {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+        filter: blur(4px);
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+        filter: blur(2px);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Animação de shake quando erra */
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .game-card {
+        margin: 0 10px;
+    }
+    
+    .forca-image {
+        max-height: 220px;
+    }
+    
+    .word-display {
+        font-size: 2rem;
+        letter-spacing: 0.3rem;
+    }
+    
+    .letter-input {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.75rem !important;
+    }
+}
+
+/* Container para a palavra */
+.word-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.word-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ajustes para espaçamentos menores */
+.mb-4 {
+    margin-bottom: 1rem !important;
+}
+
+.p-4 {
+    padding: 1.25rem !important;
+}
+
+.hover-effect {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.hover-effect:hover {
+    color: var(--accent-color) !important;
+    border-bottom-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Renomeando game-btn para manter consistência com btn-custom */
+.game-btn,
+.btn-custom {
+    background: var(--accent-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.game-btn:hover,
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+    background: #ff5252;
+} 

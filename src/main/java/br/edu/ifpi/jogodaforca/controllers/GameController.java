@@ -38,6 +38,7 @@ public class GameController {
         }
         return ResponseEntity.ok(palavra);
     }
+
     @GetMapping("/ranking")
     public String mostrarRanking(Model model, @RequestParam(required = false) String message) {
         model.addAttribute("topScores", usuarioService.getTopScores());
@@ -46,9 +47,9 @@ public class GameController {
         }
         return "ranking";
     }
+
     @PostMapping("/salvar-pontuacao")
     @ResponseBody
-
     public ResponseEntity<String> salvarPontuacao(@RequestParam String nickname, @RequestParam int pontuacao) {
         try {
             usuarioService.saveOrUpdateUsuario(nickname, pontuacao);
@@ -57,6 +58,7 @@ public class GameController {
             return ResponseEntity.badRequest().body("Erro ao salvar pontuação: " + e.getMessage());
         }
     }
+
     @PostMapping("/reiniciar")
     @ResponseBody
     public ResponseEntity<String> reiniciarJogo() {
