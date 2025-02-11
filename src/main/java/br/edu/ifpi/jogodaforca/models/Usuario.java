@@ -1,7 +1,6 @@
 package br.edu.ifpi.jogodaforca.models;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 
 @Entity
