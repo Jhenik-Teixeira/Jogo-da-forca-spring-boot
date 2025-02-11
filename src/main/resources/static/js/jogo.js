@@ -6,6 +6,8 @@ class JogoDaForca {
         this.tentativasRestantes = 6;
         this.jogoTerminado = false;
         this.pontuacaoAtual = 0;
+        this.atualizarImagem = 0;
+
     }
     inicializar() {
         this.atualizarPalavraExibida();
@@ -16,6 +18,10 @@ class JogoDaForca {
                 this.tentarLetra();
             }
         });
+    }
+    atualizarImagem() {
+        const erros = 6 - this.tentativasRestantes;
+        document.getElementById('forca-img').src = `/images/forca${erros}.png`;
     }
     tentarLetra() {
         if (this.jogoTerminado) return;
@@ -65,6 +71,40 @@ class JogoDaForca {
             this.jogoTerminado = true;
             alert('Game Over! A palavra era: ' + this.palavraOriginal);
             this.salvarPontuacao();
+        }
+    }
+    verificarFimDeJogo() {
+        if (!this.palavraAtual.includes('_')) {
+            this.processarVitoria();
+        } else if (this.tentativasRestantes === 0) {
+            this.processarDerrota();
+        }
+    }
+
+    processarVitoria() {
+        this.jogoTerminado = true;
+        this.pontuacaoAtual += (this.tentativasRestantes * 20);
+        this.pontuacaoTotal += this.pontuacaoAtual;
+        this.atualizarPontuacao();
+        alert(`Parabéns! Você venceu! Pontuação final: ${this.pontuacaoAtual}`);
+        this.salvarPontuacao();
+        this.carregarNovaPalavra();
+    }
+
+    processarDerrota() {
+        this.jogoTerminado = true;
+        alert(`Game Over! A palavra era: ${this.palavraOriginal}`);
+        alert(`Pontuação total: ${this.pontuacaoTotal}`);
+        this.salvarPontuacao();
+    }
+
+            this.carregarNovaPalavra();
+        } else if (this.tentativasRestantes === 0) {
+            this.jogoTerminado = true;
+            alert('Game Over! A palavra era: ' + this.palavraOriginal);
+            this.salvarPontuacao();
+            alert(`Game Over! A palavra era: ${this.palavraOriginal}\nPontuação total: ${this.pontuacaoTotal}`);
+            this.salvarPontuacao(this.pontuacaoTotal);
         }
     }
     salvarPontuacao() {

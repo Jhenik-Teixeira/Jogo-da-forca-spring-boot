@@ -27,6 +27,7 @@ public class UsuarioService {
         }
         return usuarioRepository.save(usuario);
     }
+
     // retorna os 10 melhores usuários
     public List<Usuario> getTopScores() {
         return usuarioRepository.findAll(Sort.by(Sort.Direction.DESC, "pontuacaoMaxima"))
