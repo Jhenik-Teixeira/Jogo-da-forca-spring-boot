@@ -1,7 +1,7 @@
 package br.edu.ifpi.jogodaforca.controllers;
 
-import br.edu.ifpi.jogodaforca.models.Usuario;
-import br.edu.ifpi.jogodaforca.repositories.UsuarioRepository;
+import br.edu.ifpi.jogodaforca.models.*;
+import br.edu.ifpi.jogodaforca.repositories.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
