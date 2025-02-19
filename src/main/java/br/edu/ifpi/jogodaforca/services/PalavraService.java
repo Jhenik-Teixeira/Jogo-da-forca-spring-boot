@@ -28,4 +28,5 @@ public class PalavraService {
     public Palavra save(Palavra palavra) {
         return palavraRepository.save(palavra);
     }
+    
 }

@@ -1,8 +1,7 @@
 package br.edu.ifpi.jogodaforca.repositories;
-
-import br.edu.ifpi.jogodaforca.models.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import br.edu.ifpi.jogodaforca.models.*;
 
 import java.util.Optional;
 
