@@ -17,7 +17,6 @@ public class GameService {
     private Set<Long> palavrasUsadas = new HashSet<>();
 
     public Palavra getRandomPalavra() {
-        return palavraRepository.findRandomPalavra();
         Palavra palavra;
         int tentativas = 0;
         int maxTentativas = 10; // Evita loop infinito se houver poucas palavras

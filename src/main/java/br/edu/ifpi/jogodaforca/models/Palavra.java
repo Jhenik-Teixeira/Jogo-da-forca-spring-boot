@@ -14,6 +14,14 @@ public class Palavra {
     @Column(nullable = false, length = 255)
     private String dica;
 
+    public Palavra() {
+    }
+
+    public Palavra(String palavra, String dica) {
+        this.palavra = palavra;
+        this.dica = dica;
+    }
+    
     // Getters e setters
     public Long getId() {
         return id;

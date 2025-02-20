@@ -15,7 +15,8 @@ public class GameController {
     private GameService gameService;
     @Autowired
     private UsuarioService usuarioService;
-
+   
+    
     @GetMapping
     public String jogo(@RequestParam(required = false) String nickname, Model model) {
         if (nickname == null || nickname.trim().isEmpty()) {
@@ -39,14 +40,7 @@ public class GameController {
         return ResponseEntity.ok(palavra);
     }
 
-    @GetMapping("/ranking")
-    public String mostrarRanking(Model model, @RequestParam(required = false) String message) {
-        model.addAttribute("topScores", usuarioService.getTopScores());
-        if (message != null) {
-            model.addAttribute("message", message);
-        }
-        return "ranking";
-    }
+   
 
     @PostMapping("/salvar-pontuacao")
     @ResponseBody
@@ -58,6 +52,7 @@ public class GameController {
             return ResponseEntity.badRequest().body("Erro ao salvar pontuação: " + e.getMessage());
         }
     }
+
 
     @PostMapping("/reiniciar")
     @ResponseBody

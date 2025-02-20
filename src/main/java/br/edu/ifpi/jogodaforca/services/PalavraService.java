@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import br.edu.ifpi.jogodaforca.dto.PalavraDTO;
+
 @Service
 public class PalavraService {
 
@@ -27,5 +29,22 @@ public class PalavraService {
     // Salvar uma palavra
     public Palavra save(Palavra palavra) {
         return palavraRepository.save(palavra);
+    }
+
+    public Palavra adicionarPalavra(PalavraDTO palavraDTO) {
+        // Validações básicas
+        if (palavraDTO.getPalavra() == null || palavraDTO.getPalavra().trim().isEmpty()) {
+            throw new IllegalArgumentException("A palavra não pode estar vazia");
+        }
+        if (palavraDTO.getDica() == null || palavraDTO.getDica().trim().isEmpty()) {
+            throw new IllegalArgumentException("A dica não pode estar vazia");
+        }
+
+        Palavra novaPalavra = new Palavra(
+            palavraDTO.getPalavra().toUpperCase(),
+            palavraDTO.getDica()
+        );
+        
+        return palavraRepository.save(novaPalavra);
     }
 }
