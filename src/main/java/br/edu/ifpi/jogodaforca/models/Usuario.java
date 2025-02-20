@@ -18,6 +18,9 @@ public class Usuario {
     @Column(nullable = false)
     private LocalDateTime dataMelhorPontuacao = LocalDateTime.now();  // Inicializa com data atual
 
+    public Usuario() {
+    }
+
     // Getters e Setters
     public Long getId() {
         return id;

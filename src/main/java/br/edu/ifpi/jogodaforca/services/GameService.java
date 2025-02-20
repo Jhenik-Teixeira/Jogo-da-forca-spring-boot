@@ -20,6 +20,7 @@ public class GameService {
         Palavra palavra;
         int tentativas = 0;
         int maxTentativas = 10; // Evita loop infinito se houver poucas palavras
+
         do {
             palavra = palavraRepository.findRandomPalavra();
             tentativas++;
@@ -30,11 +31,14 @@ public class GameService {
                 break;
             }
         } while (palavra != null && palavrasUsadas.contains(palavra.getId()));
+
         if (palavra != null) {
             palavrasUsadas.add(palavra.getId());
         }
+
         return palavra;
     }
+
     // Método para reiniciar o jogo (limpar palavras usadas)
     public void reiniciarJogo() {
         palavrasUsadas.clear();

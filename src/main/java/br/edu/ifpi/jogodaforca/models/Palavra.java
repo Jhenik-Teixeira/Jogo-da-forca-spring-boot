@@ -14,6 +14,7 @@ public class Palavra {
     @Column(nullable = false, length = 255)
     private String dica;
 
+<<<<<<< HEAD
     public Palavra() {
     }
 
@@ -22,6 +23,14 @@ public class Palavra {
         this.dica = dica;
     }
     
+=======
+    public Palavra(){
+    }
+    public Palavra(long id, String palavra){
+        
+    }
+
+>>>>>>> 382be9d36e0f88aea6bedf5ad9d81432c5638cd3
     // Getters e setters
     public Long getId() {
         return id;

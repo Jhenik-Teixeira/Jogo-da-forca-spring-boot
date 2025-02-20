@@ -1,5 +1,4 @@
 package br.edu.ifpi.jogodaforca.repositories;
-
 import br.edu.ifpi.jogodaforca.models.Palavra;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

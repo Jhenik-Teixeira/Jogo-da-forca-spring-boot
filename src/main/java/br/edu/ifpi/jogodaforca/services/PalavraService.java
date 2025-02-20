@@ -30,6 +30,7 @@ public class PalavraService {
     public Palavra save(Palavra palavra) {
         return palavraRepository.save(palavra);
     }
+<<<<<<< HEAD
 
     public Palavra adicionarPalavra(PalavraDTO palavraDTO) {
         // Validações básicas
@@ -47,4 +48,7 @@ public class PalavraService {
         
         return palavraRepository.save(novaPalavra);
     }
+=======
+    
+>>>>>>> 382be9d36e0f88aea6bedf5ad9d81432c5638cd3
 }
