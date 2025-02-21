@@ -3,7 +3,6 @@ INSERT INTO palavra (palavra, dica) VALUES ('JAVA', 'Linguagem de programação 
 INSERT INTO palavra (palavra, dica) VALUES ('SPRING', 'Framework Java para desenvolvimento web');
 INSERT INTO palavra (palavra, dica) VALUES ('HTML', 'Linguagem de marcação para páginas web');
 INSERT INTO palavra (palavra, dica) VALUES ('PYTHON', 'Linguagem conhecida por sua simplicidade');
-INSERT INTO palavra (palavra, dica) VALUES ('JAVASCRIPT', 'Linguagem de programação para web');
 INSERT INTO palavra (palavra, dica) VALUES ('DATABASE', 'Local onde armazenamos dados');
 INSERT INTO palavra (palavra, dica) VALUES ('FRONTEND', 'Parte visual de uma aplicação');
 INSERT INTO palavra (palavra, dica) VALUES ('BACKEND', 'Parte do servidor de uma aplicação');

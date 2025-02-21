@@ -21,30 +21,31 @@ class JogoDaForca {
             }
         });
     }
-
+    // atualiza a imagem de acordo com os erros
     atualizarImagem() {
         const erros = 6 - this.tentativasRestantes;
         document.getElementById('forca-img').src = `/images/forca${erros}.png`;
     }
 
     tentarLetra() {
-        if (this.jogoTerminado) return;
+        if (this.jogoTerminado) return; // Verificação se o jogo terminou
 
         const input = document.getElementById('letra-input');
         const letra = input.value.toLowerCase();
         input.value = '';
-
+        // letra invalida
         if (!letra.match(/[a-z]/i)) {
-            alert('Por favor, digite uma letra válida');
+            alert('Por favor, digite uma letra válida'); 
             return;
         }
-
+        // letra erradas
         if (this.letrasErradas.includes(letra) || this.letrasAcertadas.has(letra)) {
             alert('Você já tentou esta letra!');
             return;
         }
 
         let acertou = false;
+        // Verificação se a letra está na palavra
         if (this.palavraOriginal.toLowerCase().includes(letra)) {
             if (!this.letrasAcertadas.has(letra)) {
                 this.letrasAcertadas.add(letra);
@@ -52,7 +53,7 @@ class JogoDaForca {
                 this.pontuacaoAtual += (10 * ocorrencias);
                 acertou = true;
             }
-
+            //  percorre a palavra original e atualiza a palavra exibida (this.palavraAtual) com a letra correta nas posições correspondentes.
             for (let i = 0; i < this.palavraOriginal.length; i++) {
                 if (this.palavraOriginal[i].toLowerCase() === letra) {
                     this.palavraAtual[i] = this.palavraOriginal[i];

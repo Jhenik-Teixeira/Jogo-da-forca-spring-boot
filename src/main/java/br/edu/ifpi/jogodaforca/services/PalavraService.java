@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import br.edu.ifpi.jogodaforca.dto.PalavraDTO;
 
@@ -21,17 +21,12 @@ public class PalavraService {
         return palavraRepository.findAll();
     }
 
-    // Busca uma palavra aleatória utilizando o repositório
-    public Optional<Palavra> getRandomPalavra() {
-        return Optional.ofNullable(palavraRepository.findRandomPalavra());
-    }
-
     // Salvar uma palavra
     public Palavra save(Palavra palavra) {
         return palavraRepository.save(palavra);
     }
-<<<<<<< HEAD
 
+    // ADICIONA A PALVRA DO USUARIO
     public Palavra adicionarPalavra(PalavraDTO palavraDTO) {
         // Validações básicas
         if (palavraDTO.getPalavra() == null || palavraDTO.getPalavra().trim().isEmpty()) {
@@ -48,7 +43,4 @@ public class PalavraService {
         
         return palavraRepository.save(novaPalavra);
     }
-=======
-    
->>>>>>> 382be9d36e0f88aea6bedf5ad9d81432c5638cd3
 }

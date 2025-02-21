@@ -19,7 +19,7 @@ public class GameService {
     public Palavra getRandomPalavra() {
         Palavra palavra;
         int tentativas = 0;
-        int maxTentativas = 10; // Evita loop infinito se houver poucas palavras
+        int maxTentativas = 6; // Evita loop infinito se houver poucas palavras
 
         do {
             palavra = palavraRepository.findRandomPalavra();
